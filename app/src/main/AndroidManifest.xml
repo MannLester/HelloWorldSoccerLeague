@@ -40,7 +40,8 @@
 
         <activity
             android:name=".FourthActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="landscape">
             <!-- No MAIN or LAUNCHER intent filter here -->
         </activity>
 

@@ -1,8 +1,8 @@
-plugins {
+plugins{
     alias(libs.plugins.android.application)
 }
 
-android {
+android{
     namespace = "com.example.helloworldthegame"
     compileSdk = 34
 
@@ -13,7 +13,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.text.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -31,7 +31,7 @@ android {
     }
 }
 
-dependencies {
+dependencies{
 
     implementation(libs.appcompat)
     implementation(libs.material)
