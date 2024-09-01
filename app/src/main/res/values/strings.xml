@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Mobile Computing Activity</string>
+    <string name="hello_world">Hello World</string>
+    <string name="the_game">Soccer League</string>
+    <string name="login">Login</string>
+    <string name="signup">Signup</string>
+    <string name="user_form">User Form</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="address">Address</string>
+    <string name="email">Email Address</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+</resources>
