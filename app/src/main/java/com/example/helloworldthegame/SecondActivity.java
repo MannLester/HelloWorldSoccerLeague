@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
 
 public class SecondActivity extends AppCompatActivity {
     private Button registerButton;
-    private EditText nameField, ageField, addressField, emailField;
+    private EditText nameField, ageField, addressField, emailField, usernameField, passwordField, confirmPasswordField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +21,14 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         registerButton = findViewById(R.id.register);
-        nameField = findViewById(R.id.username);
+        nameField = findViewById(R.id.name);
         ageField = findViewById(R.id.age);
         addressField = findViewById(R.id.address);
         emailField = findViewById(R.id.email);
+        usernameField = findViewById(R.id.username);
+        passwordField = findViewById(R.id.password);
+        confirmPasswordField = findViewById(R.id.confirm_password);
+
 
         registerButton.setClickable(false);
         registerButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.gray)));
@@ -58,6 +62,9 @@ public class SecondActivity extends AppCompatActivity {
         String ageText = ageField.getText().toString().trim();
         String address = addressField.getText().toString().trim();
         String email = emailField.getText().toString().trim();
+        String username = usernameField.getText().toString().trim();
+        String password = passwordField.getText().toString().trim();
+        String confirm_password = confirmPasswordField.getText().toString().trim();
 
         boolean isNameValid = !name.isEmpty();
         boolean isAgeValid;
@@ -72,8 +79,10 @@ public class SecondActivity extends AppCompatActivity {
 
         boolean isAddressValid = !address.isEmpty();
         boolean isEmailValid = android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+        boolean isUsernameValid = !username.isEmpty();
+        boolean isPasswordValid = password.equals(confirm_password);
 
-        return isNameValid && isAgeValid && isAddressValid && isEmailValid;
+        return isNameValid && isAgeValid && isAddressValid && isEmailValid && isUsernameValid && isPasswordValid;
     }
 
     private void changeRegisterButton(boolean userInfoValidated) {
