@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/football_field">
+
+    <!-- Left goal -->
+    <View
+        android:id="@+id/leftGoal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/football_net"
+        android:rotationY="180"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <!-- Right goal -->
+    <View
+        android:id="@+id/rightGoal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/football_net"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <ImageView
+        android:id="@+id/blue_player"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:src="@drawable/blue_player"
+        android:rotationY="180"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/rightGoal"
+        app:layout_constraintEnd_toEndOf="@id/rightGoal"
+        android:contentDescription="blue_player" />
+
+    <ImageView
+        android:id="@+id/red_player"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:src="@drawable/red_player"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/leftGoal"
+        app:layout_constraintEnd_toEndOf="@id/leftGoal"
+        android:contentDescription="red_player" />
+
+    <ImageView
+        android:id="@+id/soccer_ball"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/soccer_ball"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Green field -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/field"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/leftGoal"
+        app:layout_constraintEnd_toStartOf="@id/rightGoal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
