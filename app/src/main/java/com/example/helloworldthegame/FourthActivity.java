@@ -22,5 +22,14 @@ public class FourthActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button calculatorButton = findViewById(R.id.button_calculator);
+        calculatorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FourthActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
