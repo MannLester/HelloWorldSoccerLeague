@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/football_field">
@@ -28,6 +29,42 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintWidth_percent="0.1" />
 
+    <ImageView
+        android:id="@+id/blue_player"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:src="@drawable/blue_player"
+        android:rotationY="180"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/rightGoal"
+        app:layout_constraintEnd_toEndOf="@id/rightGoal"
+        android:contentDescription="blue_player" />
+
+    <ImageView
+        android:id="@+id/red_player"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:src="@drawable/red_player"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/leftGoal"
+        app:layout_constraintEnd_toEndOf="@id/leftGoal"
+        android:contentDescription="red_player" />
+
+    <ImageView
+        android:id="@+id/soccer_ball"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/soccer_ball"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <!-- Green field -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/field"
@@ -38,428 +75,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <!-- 5x6 grid of translucent boxes with white borders -->
-
-        <!-- Column 1 -->
-        <View
-            android:id="@+id/box01"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/box02"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/box07"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box02"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box01"
-            app:layout_constraintBottom_toTopOf="@id/box03"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/box08"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box03"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box02"
-            app:layout_constraintBottom_toTopOf="@id/box04"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/box09"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box04"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box03"
-            app:layout_constraintBottom_toTopOf="@id/box05"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/box10"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box05"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box04"
-            app:layout_constraintBottom_toTopOf="@id/box06"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/box11"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box06"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box05"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/box12"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <!-- Column 2 -->
-        <View
-            android:id="@+id/box07"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/box08"
-            app:layout_constraintStart_toEndOf="@id/box01"
-            app:layout_constraintEnd_toStartOf="@id/box13"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box08"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box07"
-            app:layout_constraintBottom_toTopOf="@id/box09"
-            app:layout_constraintStart_toEndOf="@id/box02"
-            app:layout_constraintEnd_toStartOf="@id/box14"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box09"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box08"
-            app:layout_constraintBottom_toTopOf="@id/box10"
-            app:layout_constraintStart_toEndOf="@id/box03"
-            app:layout_constraintEnd_toStartOf="@id/box15"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box10"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box09"
-            app:layout_constraintBottom_toTopOf="@id/box11"
-            app:layout_constraintStart_toEndOf="@id/box04"
-            app:layout_constraintEnd_toStartOf="@id/box16"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box11"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box10"
-            app:layout_constraintBottom_toTopOf="@id/box12"
-            app:layout_constraintStart_toEndOf="@id/box05"
-            app:layout_constraintEnd_toStartOf="@id/box17"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box12"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box11"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/box06"
-            app:layout_constraintEnd_toStartOf="@id/box18"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <!-- Column 3 -->
-        <!-- Column 3 -->
-        <View
-            android:id="@+id/box13"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/box14"
-            app:layout_constraintStart_toEndOf="@id/box07"
-            app:layout_constraintEnd_toStartOf="@id/box19"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box14"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box13"
-            app:layout_constraintBottom_toTopOf="@id/box15"
-            app:layout_constraintStart_toEndOf="@id/box08"
-            app:layout_constraintEnd_toStartOf="@id/box20"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box15"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box14"
-            app:layout_constraintBottom_toTopOf="@id/box16"
-            app:layout_constraintStart_toEndOf="@id/box09"
-            app:layout_constraintEnd_toStartOf="@id/box21"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box16"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box15"
-            app:layout_constraintBottom_toTopOf="@id/box17"
-            app:layout_constraintStart_toEndOf="@id/box10"
-            app:layout_constraintEnd_toStartOf="@id/box22"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box17"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box16"
-            app:layout_constraintBottom_toTopOf="@id/box18"
-            app:layout_constraintStart_toEndOf="@id/box11"
-            app:layout_constraintEnd_toStartOf="@id/box23"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box18"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box17"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/box12"
-            app:layout_constraintEnd_toStartOf="@id/box24"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <!-- Column 4 -->
-        <View
-            android:id="@+id/box19"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/box20"
-            app:layout_constraintStart_toEndOf="@id/box13"
-            app:layout_constraintEnd_toStartOf="@id/box25"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box20"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box19"
-            app:layout_constraintBottom_toTopOf="@id/box21"
-            app:layout_constraintStart_toEndOf="@id/box14"
-            app:layout_constraintEnd_toStartOf="@id/box26"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box21"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box20"
-            app:layout_constraintBottom_toTopOf="@id/box22"
-            app:layout_constraintStart_toEndOf="@id/box15"
-            app:layout_constraintEnd_toStartOf="@id/box27"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box22"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box21"
-            app:layout_constraintBottom_toTopOf="@id/box23"
-            app:layout_constraintStart_toEndOf="@id/box16"
-            app:layout_constraintEnd_toStartOf="@id/box28"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box23"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box22"
-            app:layout_constraintBottom_toTopOf="@id/box24"
-            app:layout_constraintStart_toEndOf="@id/box17"
-            app:layout_constraintEnd_toStartOf="@id/box29"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box24"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box23"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/box18"
-            app:layout_constraintEnd_toStartOf="@id/box30"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <!-- Column 5 -->
-        <View
-            android:id="@+id/box25"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/box26"
-            app:layout_constraintStart_toEndOf="@id/box19"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box26"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box25"
-            app:layout_constraintBottom_toTopOf="@id/box27"
-            app:layout_constraintStart_toEndOf="@id/box20"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box27"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box26"
-            app:layout_constraintBottom_toTopOf="@id/box28"
-            app:layout_constraintStart_toEndOf="@id/box21"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box28"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box27"
-            app:layout_constraintBottom_toTopOf="@id/box29"
-            app:layout_constraintStart_toEndOf="@id/box22"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box29"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box28"
-            app:layout_constraintBottom_toTopOf="@id/box30"
-            app:layout_constraintStart_toEndOf="@id/box23"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <View
-            android:id="@+id/box30"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="2dp"
-            android:background="@drawable/box_background"
-            app:layout_constraintTop_toBottomOf="@id/box29"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/box24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintVertical_weight="1" />
-
-        <ImageView
-            android:id="@+id/red_player"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:src="@drawable/red_player"
-            app:layout_constraintTop_toTopOf="@id/box03"
-            app:layout_constraintBottom_toBottomOf="@id/box03"
-            app:layout_constraintStart_toStartOf="@id/box03"
-            app:layout_constraintEnd_toEndOf="@id/box03"
-            android:contentDescription="red_player" />
-
-        <ImageView
-            android:id="@+id/blue_player"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:src="@drawable/blue_player"
-            android:rotationY="180"
-            app:layout_constraintTop_toTopOf="@id/box28"
-            app:layout_constraintBottom_toBottomOf="@id/box28"
-            app:layout_constraintStart_toStartOf="@id/box28"
-            app:layout_constraintEnd_toEndOf="@id/box28"
-            android:contentDescription="blue_player" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
