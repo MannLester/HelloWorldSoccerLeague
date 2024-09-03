@@ -27,7 +27,7 @@ public class FourthActivity extends AppCompatActivity {
         calculatorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FourthActivity.this, MainActivity.class);
+                Intent intent = new Intent(FourthActivity.this, CalculatorActivity.class);
                 startActivity(intent);
             }
         });

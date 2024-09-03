@@ -52,6 +52,13 @@
             <!-- No MAIN or LAUNCHER intent filter here -->
         </activity>
 
+        <activity
+            android:name=".CalculatorActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+
+        </activity>
+
     </application>
 
 </manifest>
